@@ -30,10 +30,14 @@ class Settings:
     countriesnow_base_url: str
     frankfurter_base_url: str
     request_timeout: float
+    database_url: str
+    log_level: str
 
 
 settings = Settings(
     countriesnow_base_url=_required_setting("COUNTRIESNOW_BASE_URL"),
     frankfurter_base_url=_required_setting("FRANKFURTER_BASE_URL"),
     request_timeout=_request_timeout(),
+    database_url=_required_setting("DATABASE_URL"),
+    log_level=os.getenv("LOG_LEVEL", "INFO").strip().upper() or "INFO",
 )

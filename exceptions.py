@@ -1,4 +1,12 @@
-class CountryNotFoundError(Exception):
+class NotFoundError(Exception):
+    pass
+
+
+class CountryNotFoundError(NotFoundError):
+    pass
+
+
+class TripNotFoundError(NotFoundError):
     pass
 
 
